@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const dbConnection = () => {
   mongoose
-    .connect(process.env.MONGOURI, {
+    .connect(process.env.MONGO_URI, {
       dbName: "MERN_JOB_SEEKING_WEBAPP",
     })
     .then(() => {
