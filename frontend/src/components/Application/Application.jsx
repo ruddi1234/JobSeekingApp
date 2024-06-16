@@ -38,6 +38,9 @@ const Application = () => {
         "https://jobseekingapp-7.onrender.com/api/v1/application/post",
         formData,
         {
+          headers: {
+            Authorization: `Bearer ${token}`
+          },
           withCredentials: true,
           headers: {
             "Content-Type": "multipart/form-data",

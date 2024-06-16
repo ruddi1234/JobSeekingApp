@@ -22,6 +22,9 @@ const Login = () => {
         { email, password, role },
         {
           headers: {
+            Authorization: `Bearer ${token}`
+          },
+          headers: {
             "Content-Type": "application/json",
           },
           withCredentials: true,

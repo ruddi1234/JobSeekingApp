@@ -48,6 +48,9 @@ const MyJobs = () => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
       .put(`https://jobseekingapp-7.onrender.com/api/v1/job/update/${jobId}`, updatedJob, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
         withCredentials: true,
       })
       .then((res) => {
@@ -63,6 +66,9 @@ const MyJobs = () => {
   const handleDeleteJob = async (jobId) => {
     await axios
       .delete(`https://jobseekingapp-7.onrender.com/api/v1/job/delete/${jobId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
         withCredentials: true,
       })
       .then((res) => {

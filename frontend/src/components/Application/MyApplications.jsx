@@ -46,6 +46,9 @@ const MyApplications = () => {
     try {
       axios
         .delete(`https://jobseekingapp-7.onrender.com/api/v1/application/delete/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          },
           withCredentials: true,
         })
         .then((res) => {

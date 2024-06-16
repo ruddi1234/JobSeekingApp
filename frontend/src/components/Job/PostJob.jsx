@@ -55,6 +55,9 @@ const PostJob = () => {
         {
           withCredentials: true,
           headers: {
+            Authorization: `Bearer ${token}`
+          },
+          headers: {
             "Content-Type": "application/json",
           },
         }

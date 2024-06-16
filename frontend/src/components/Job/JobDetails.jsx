@@ -13,6 +13,9 @@ const JobDetails = () => {
   useEffect(() => {
     axios
       .get(`https://jobseekingapp-7.onrender.com/api/v1/job/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
         withCredentials: true,
       })
       .then((res) => {
