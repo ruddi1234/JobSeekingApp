@@ -26,9 +26,6 @@ const Register = () => {
         { name, phone, email, role, password },
         {
           headers: {
-            Authorization: `Bearer ${token}`
-          },
-          headers: {
             "Content-Type": "application/json",
           },
           withCredentials: true,

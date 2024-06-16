@@ -15,9 +15,6 @@ const Navbar = () => {
       const response = await axios.get(
         "https://jobseekingapp-7.onrender.com/api/v1/user/logout",
         {
-          headers: {
-            Authorization: `Bearer ${token}`
-          },
           withCredentials: true,
         }
       );

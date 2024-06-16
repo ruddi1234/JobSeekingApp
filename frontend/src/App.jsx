@@ -30,9 +30,6 @@ const App = () => {
         const response = await axios.get(
           "https://jobseekingapp-7.onrender.com/api/v1/user/getuser",
           {
-            headers: {
-              Authorization: `Bearer ${token}`
-            },
             withCredentials: true,
           }
         );
