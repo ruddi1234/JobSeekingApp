@@ -14,7 +14,7 @@ const JobDetails = () => {
     axios
       .get(`https://jobseekingapp-7.onrender.com/api/v1/job/${id}`, {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
         },
         withCredentials: true,
       })

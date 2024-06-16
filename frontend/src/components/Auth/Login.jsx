@@ -22,6 +22,9 @@ const Login = () => {
         { email, password, role },
         {
           headers: {
+            Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
+          },
+          headers: {
             "Content-Type": "application/json",
           },
           withCredentials: true,

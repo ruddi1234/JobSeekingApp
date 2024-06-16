@@ -26,6 +26,9 @@ const Register = () => {
         { name, phone, email, role, password },
         {
           headers: {
+            Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
+          },
+          headers: {
             "Content-Type": "application/json",
           },
           withCredentials: true,

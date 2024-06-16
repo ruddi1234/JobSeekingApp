@@ -40,6 +40,9 @@ const Application = () => {
         {
           withCredentials: true,
           headers: {
+            Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
+          },
+          headers: {
             "Content-Type": "multipart/form-data",
           },
         }

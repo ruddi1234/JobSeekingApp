@@ -30,6 +30,9 @@ const App = () => {
         const response = await axios.get(
           "https://jobseekingapp-7.onrender.com/api/v1/user/getuser",
           {
+            headers: {
+              Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
+            },
             withCredentials: true,
           }
         );

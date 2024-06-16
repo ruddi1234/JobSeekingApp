@@ -57,6 +57,9 @@ const PostJob = () => {
           headers: {
             "Content-Type": "application/json",
           },
+          headers: {
+            Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
+          },
         }
       )
       .then((res) => {

@@ -18,7 +18,9 @@ const MyJobs = () => {
       try {
         const { data } = await axios.get(
           "https://jobseekingapp-7.onrender.com/api/v1/job/getmyjobs",
-          { withCredentials: true }
+          { headers: {
+            Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
+          }, withCredentials: true }
         );
         setMyJobs(data.myJobs);
       } catch (error) {
@@ -49,7 +51,7 @@ const MyJobs = () => {
     await axios
       .put(`https://jobseekingapp-7.onrender.com/api/v1/job/update/${jobId}`, updatedJob, {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
         },
         withCredentials: true,
       })
@@ -67,7 +69,7 @@ const MyJobs = () => {
     await axios
       .delete(`https://jobseekingapp-7.onrender.com/api/v1/job/delete/${jobId}`, {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
         },
         withCredentials: true,
       })
