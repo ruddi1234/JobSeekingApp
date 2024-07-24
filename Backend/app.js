@@ -1,4 +1,4 @@
-import { config } from 'dotenv';
+import { config } from "dotenv";
 import express from "express";
 import { dbConnection } from "./database/dbConnection.js";
 import jobRouter from "./routes/jobRoutes.js";
@@ -14,12 +14,11 @@ config({ path: "./config/config.env" });
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
-    methods: ['GET', 'POST', 'DELETE', 'PUT'],
+    origin: true,
+    methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
 );
-
 
 app.use(cookieParser());
 app.use(express.json());
