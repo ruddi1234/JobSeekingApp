@@ -18,10 +18,7 @@ const MyApplications = () => {
     try {
       if (user && user.role === "Employer") {
         axios
-          .get("https://jobseekingapp-7.onrender.com/api/v1/application/employer/getall", {
-            headers: {
-              Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
-            },
+          .get("http://localhost:4000/api/v1/application/employer/getall", {
             withCredentials: true,
           })
           .then((res) => {
@@ -29,10 +26,7 @@ const MyApplications = () => {
           });
       } else {
         axios
-          .get("https://jobseekingapp-7.onrender.com/api/v1/application/jobseeker/getall", {
-            headers: {
-              Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
-            },
+          .get("http://localhost:4000/api/v1/application/jobseeker/getall", {
             withCredentials: true,
           })
           .then((res) => {
@@ -51,10 +45,7 @@ const MyApplications = () => {
   const deleteApplication = (id) => {
     try {
       axios
-        .delete(`https://jobseekingapp-7.onrender.com/api/v1/application/delete/${id}`, {
-          headers: {
-            Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
-          },
+        .delete(`http://localhost:4000/api/v1/application/delete/${id}`, {
           withCredentials: true,
         })
         .then((res) => {

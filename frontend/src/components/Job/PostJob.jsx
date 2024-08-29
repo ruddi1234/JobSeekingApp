@@ -31,7 +31,7 @@ const PostJob = () => {
     }
     await axios
       .post(
-        "https://jobseekingapp-7.onrender.com/api/v1/job/post",
+        "http://localhost:4000/api/v1/job/post",
         fixedSalary.length >= 4
           ? {
               title,
@@ -56,9 +56,6 @@ const PostJob = () => {
           withCredentials: true,
           headers: {
             "Content-Type": "application/json",
-          },
-          headers: {
-            Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
           },
         }
       )

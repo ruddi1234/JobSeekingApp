@@ -35,13 +35,10 @@ const Application = () => {
 
     try {
       const { data } = await axios.post(
-        "https://jobseekingapp-7.onrender.com/api/v1/application/post",
+        "http://localhost:4000/api/v1/application/post",
         formData,
         {
           withCredentials: true,
-          headers: {
-            Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
-          },
           headers: {
             "Content-Type": "multipart/form-data",
           },

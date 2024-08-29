@@ -17,10 +17,8 @@ const MyJobs = () => {
     const fetchJobs = async () => {
       try {
         const { data } = await axios.get(
-          "https://jobseekingapp-7.onrender.com/api/v1/job/getmyjobs",
-          { headers: {
-            Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
-          }, withCredentials: true }
+          "http://localhost:4000/api/v1/job/getmyjobs",
+          { withCredentials: true }
         );
         setMyJobs(data.myJobs);
       } catch (error) {
@@ -49,10 +47,7 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
-      .put(`https://jobseekingapp-7.onrender.com/api/v1/job/update/${jobId}`, updatedJob, {
-        headers: {
-          Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
-        },
+      .put(`http://localhost:4000/api/v1/job/update/${jobId}`, updatedJob, {
         withCredentials: true,
       })
       .then((res) => {
@@ -67,10 +62,7 @@ const MyJobs = () => {
   //Function For Deleting Job
   const handleDeleteJob = async (jobId) => {
     await axios
-      .delete(`https://jobseekingapp-7.onrender.com/api/v1/job/delete/${jobId}`, {
-        headers: {
-          Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
-        },
+      .delete(`http://localhost:4000/api/v1/job/delete/${jobId}`, {
         withCredentials: true,
       })
       .then((res) => {

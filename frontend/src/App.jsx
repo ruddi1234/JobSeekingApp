@@ -19,34 +19,23 @@ import MyJobs from "./components/Job/MyJobs";
 
 const App = () => {
   const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
-
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        // Assume you store the token in local storage
-        const token = process.env.JWT_SECRET_KEY;
-
-        // Include the token in the Authorization header
         const response = await axios.get(
-          "https://jobseekingapp-7.onrender.com/api/v1/user/getuser",
+          "http://localhost:4000/api/v1/user/getuser",
           {
-            headers: {
-              Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
-            },
             withCredentials: true,
           }
         );
-
         setUser(response.data.user);
         setIsAuthorized(true);
       } catch (error) {
         setIsAuthorized(false);
-        console.error("Error fetching user data", error);
       }
     };
-
     fetchUser();
-  }, []);
+  }, [isAuthorized]);
 
   return (
     <>

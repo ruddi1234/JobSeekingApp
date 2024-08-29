@@ -10,10 +10,7 @@ const Jobs = () => {
   useEffect(() => {
     try {
       axios
-        .get("https://jobseekingapp-7.onrender.com/api/v1/job/getall", {
-          headers: {
-            Authorization: `Bearer ${process.env.JWT_SECRET_KEY}`
-          },
+        .get("http://localhost:4000/api/v1/job/getall", {
           withCredentials: true,
         })
         .then((res) => {
